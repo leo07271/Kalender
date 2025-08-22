@@ -1,0 +1,70 @@
+/* --- Değişkenler ve Temel Ayarlar --- */
+:root { --ana-renk: #007bff; }
+body { font-family: Arial, sans-serif; margin: 0; transition: background-color 0.3s, color 0.3s; }
+
+/* --- Modlar --- */
+body.light-mode { background-color: #f0f2f5; color: #333; --panel-bg: #ffffff; --input-bg: #ffffff; --input-border: #ccc; --text-color: #333; --shadow-color: rgba(0,0,0,0.1); }
+body.dark-mode { background-color: #121212; color: #e0e0e0; --panel-bg: #1e1e1e; --input-bg: #2a2a2a; --input-border: #444; --text-color: #e0e0e0; --shadow-color: rgba(0,0,0,0.4); }
+
+.container { display: flex; flex-wrap: wrap; }
+.sol-panel, .sag-panel { padding: 20px; box-sizing: border-box; }
+
+/* --- Ayarlar --- */
+.ayarlar-dislisi { position: fixed; bottom: 20px; left: 20px; width: 50px; height: 50px; border-radius: 50%; z-index: 1001; background-color: var(--ana-renk); color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.ayarlar-paneli { position: fixed; top: 0; right: -450px; width: 400px; height: 100%; background-color: var(--panel-bg); box-shadow: -5px 0 15px var(--shadow-color); z-index: 1000; padding: 20px; box-sizing: border-box; transition: right 0.4s ease-in-out; display: flex; flex-direction: column; }
+.ayarlar-paneli.acik { right: 0; }
+.ayarlar-sekmeleri { display: flex; align-items: center; border-bottom: 1px solid var(--input-border); margin-bottom: 20px; }
+.sekme-kapat-butonu { padding: 10px; border: none; background-color: transparent; color: var(--text-color); cursor: pointer; display: flex; align-items: center; justify-content: center; margin-right: 10px; }
+.sekme-kapat-butonu .material-symbols-outlined { font-size: 20px; }
+.ayar-sekme { padding: 10px 15px; border: none; background-color: transparent; color: var(--text-color); cursor: pointer; font-size: 16px; border-bottom: 3px solid transparent; }
+.ayar-sekme.aktif { border-bottom-color: var(--ana-renk); font-weight: bold; }
+.ayar-icerik { display: none; flex-grow: 1; overflow-y: auto; flex-direction: column; }
+.ayar-icerik.aktif { display: flex; }
+.renk-secenekleri { display: flex; gap: 15px; margin-bottom: 20px; }
+.renk-kutusu { width: 40px; height: 40px; border-radius: 50%; border: 3px solid #fff; cursor: pointer; padding: 0; }
+.renk-kutusu.mavi { background-color: #007bff; } .renk-kutusu.yesil { background-color: #28a745; } .renk-kutusu.kirmizi { background-color: #dc3545; } .renk-kutusu.mor { background-color: #6f42c1; }
+#varsayilan-tema-butonu { background-color: #6c757d; }
+.dil-secenekleri { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--input-border); }
+.dil-butonlari { display: flex; flex-direction: column; gap: 10px; }
+.dil-butonu { width: 100%; justify-content: flex-start; background-color: var(--input-bg); color: var(--text-color); border: 1px solid var(--input-border); }
+.dil-butonu:hover { background-color: var(--ana-renk); color: white; }
+
+/* --- Not Defteri --- */
+.not-kontrolleri { display: flex; gap: 10px; margin-bottom: 15px; align-items: center; }
+.not-kontrolleri select { flex-grow: 1; }
+.kucuk-buton { padding: 5px 10px; font-size: 14px; width: auto; flex-shrink: 0; }
+.kucuk-buton.sil { background-color: #dc3545; }
+.buyuk-buton { margin-top: 15px; }
+#editor-konteyneri { flex-grow: 1; display: flex; flex-direction: column; }
+#editor { height: 100%; background-color: var(--input-bg); }
+.ql-toolbar, .ql-container { border-color: var(--input-border) !important; border-radius: 8px 8px 0 0; }
+.ql-container { border-radius: 0 0 8px 8px; }
+.ql-snow .ql-stroke { stroke: var(--text-color) !important; }
+.ql-snow .ql-fill { fill: var(--text-color) !important; }
+.ql-editor { color: var(--text-color) !important; }
+
+/* --- Sol Panel --- */
+.sol-panel { background-color: var(--panel-bg); flex: 1; min-width: 300px; border-right: 1px solid var(--input-border); }
+h1, h2, p { color: var(--text-color); }
+h1 { font-size: 20px; margin-top: 0; }
+input[type="text"], input[type="number"], input[type="date"], input[type="time"], select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--input-border); background-color: var(--input-bg); color: var(--text-color); border-radius: 8px; box-sizing: border-box; font-size: 16px; }
+button { width: 100%; padding: 15px; background-color: var(--ana-renk); color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: filter 0.2s ease; }
+button:hover { filter: brightness(90%); }
+
+/* --- Sağ Panel --- */
+.sag-panel { flex: 2; }
+.sag-panel-baslik { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap:10px; }
+.aylik-toplam { background-color: var(--ana-renk); color: white; padding: 10px 15px; border-radius: 8px; text-align: right; }
+.aylik-toplam span { font-size: 14px; } .aylik-toplam strong { display: block; font-size: 22px; }
+.ay-filtresi { display: flex; gap: 10px; }
+.randevu-karti { background-color: var(--panel-bg); border-radius: 8px; padding: 15px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 4px var(--shadow-color); border-left: 5px solid var(--ana-renk); }
+.randevu-ucreti { font-size: 20px; font-weight: bold; color: var(--ana-renk); margin-right: 15px; }
+.randevu-bilgisi { flex-grow: 1; } .randevu-bilgisi p { margin: 0; font-size: 16px; color: var(--text-color); }
+.randevu-bilgisi .isim { font-weight: bold; }
+.sil-butonu { background: transparent; border: none; cursor: pointer; padding: 0; width: auto; height: auto; }
+.sil-butonu .material-symbols-outlined { color: #dc3545; font-size: 22px; }
+
+/* --- Canlı Zaman Kutusu Stilleri --- */
+.canli-zaman-kutusu { background-color: var(--input-bg); border: 1px solid var(--input-border); border-radius: 8px; padding: 15px; margin-bottom: 20px; text-align: center; }
+.canli-zaman-kutusu .saat { font-size: 2.5em; font-weight: bold; color: var(--ana-renk); letter-spacing: 2px; }
+.canli-zaman-kutusu .tarih { font-size: 1em; color: var(--text-color); opacity: 0.8; }

@@ -1,0 +1,20 @@
+{
+  "yeni_randevu": "Yeni Randevu",
+  "musteri_adi_placeholder": "Müşteri Adı Soyadı",
+  "ucret_placeholder": "Ücret (€)",
+  "randevu_ekle_buton": "Randevu Ekle",
+  "ayarlar": "Ayarlar",
+  "tema_rengi_secin": "Tema Rengi Seçin:",
+  "gorunum_modu": "Görünüm Modu:",
+  "karanlik_moda_gec": "Karanlık Moda Geç",
+  "aydinlik_moda_gec": "Aydınlık Moda Geç",
+  "varsayilan_ayarlar": "Varsayılan Ayarlara Dön",
+  "not_defteri": "Not Defteri",
+  "genel": "Genel",
+  "yeni_not": "Yeni Not",
+  "kategoriyi_sil": "Kategoriyi Sil",
+  "notu_kaydet": "Notu Kaydet",
+  "toplam_ciro": "Toplam Ciro:",
+  "tum_randevular": "Tüm Randevular",
+  "yaklasan_randevular": "Yaklaşan Randevular"
+}
