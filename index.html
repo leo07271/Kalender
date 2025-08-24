@@ -196,5 +196,16 @@
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>
   <script src="uygulama.js"></script>
+          <!-- ... uygulama.js script'inin hemen altı, </body>'den önce ... -->
+
+        <!-- YENİ: Service Worker'ı Kaydetme Kodu -->
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/Kalender/sw.js');
+            }
+        </script>
+        
+    </body>
+    </html>
 </body>
 </html>
